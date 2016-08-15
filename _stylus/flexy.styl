@@ -1,0 +1,52 @@
+// Grid generation functions
+generate-columns($breakpoint, $columns)
+  for $column in (1..$columns)
+    .col-{$breakpoint}-{$column}
+      flex-basis percentage($column / $columns)
+      max-width percentage($column / $columns)
+
+generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $columns)
+  if $breakpoint-width == 0
+    generate-columns($breakpoint, $columns)
+  else
+    @media screen and (min-width: $breakpoint-width)
+      .container
+        max-width breakpoint-width
+      generate-columns($breakpoint, $columns)
+
+// Grid settings
+$grid-settings ?= {
+  gutter: 1em,
+  columns: 12,
+  breakpoints: {
+    xs: 0,
+    sm: 48em,
+    md: 60em
+  }
+}
+
+
+.container
+  max-width 100%
+  width 100%
+  margin-left auto
+  margin-right auto
+  padding-left: $grid-settings.gutter
+  padding-right: $grid-settings.gutter
+
+.row
+  flex 0 1 auto
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  margin-left: -($grid-settings.gutter / 2)
+  margin-right: -($grid-settings.gutter / 2)
+
+[class*="col-"]
+  flex 0 0 auto
+  padding-left: ($grid-settings.gutter / 2)
+  padding-right: ($grid-settings.gutter / 2)
+
+// Generate grid system
+for $breakpoint, $breakpoint-width in $grid-settings.breakpoints
+  generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $grid-settings.columns)
