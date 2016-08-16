@@ -5,48 +5,102 @@ generate-columns($breakpoint, $columns)
       flex-basis percentage($column / $columns)
       max-width percentage($column / $columns)
 
+    .col-{$breakpoint}-offset-{$column}
+      margin-left percentage($column / $columns)
+
+  .start-{$breakpoint}
+    justify-content flex-start
+
+  .center-{$breakpoint}
+    justify-content center
+
+  .end-{$breakpoint}
+    justify-content flex-end
+
+  .top-{$breakpoint}
+    align-items flex-start
+
+  .middle-{$breakpoint}
+    align-items center
+
+  .bottom-{$breakpoint}
+    align-items flex-end
+
+  .around-{$breakpoint}
+    justify-content space-around
+
+  .between-{$breakpoint}
+    justify-content space-between
+
+  .first-{$breakpoint}
+    order -1
+
+  .last-{$breakpoint}
+    order 1
+
 generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $columns)
   if $breakpoint-width == 0
     generate-columns($breakpoint, $columns)
   else
     @media screen and (min-width: $breakpoint-width)
       .container
-        max-width breakpoint-width
+        max-width $breakpoint-width
       generate-columns($breakpoint, $columns)
+
+generate-grid-system($settings)
+  .container
+    if $settings.animation
+      transition-property max-width
+      transition-duration 0.2s
+    box-sizing border-box
+    max-width 100%
+    width 100%
+    margin-left auto
+    margin-right auto
+    padding-left: $settings.gutter
+    padding-right: $settings.gutter
+
+  .row
+    flex 0 1 auto
+    display flex
+    flex-wrap wrap
+    flex-direction row
+    margin-left: -($settings.gutter / 2)
+    margin-right: -($settings.gutter / 2)
+
+    &.reverse
+      flex-direction row-reverse
+
+  [class*="col-"]
+    if $settings.animation
+      transition-property flex-basis, max-width
+      transition-duration 0.2s
+    box-sizing border-box
+    flex 0 0 auto
+    padding-left: ($settings.gutter / 2)
+    padding-right: ($settings.gutter / 2)
+
+  .col-auto
+    flex 1 0 0
+    max-width 100%
+
+  for $breakpoint, $breakpoint-width in $settings.breakpoints
+    generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $settings.columns)
 
 // Grid settings
 $grid-settings ?= {
+  animation: true,
   gutter: 1em,
   columns: 12,
   breakpoints: {
     xs: 0,
-    sm: 48em,
-    md: 60em
+    sm: 480px,
+    md: 768px,
+    lg: 992px,
+    xlg: 1200px
   }
 }
 
 
-.container
-  max-width 100%
-  width 100%
-  margin-left auto
-  margin-right auto
-  padding-left: $grid-settings.gutter
-  padding-right: $grid-settings.gutter
-
-.row
-  flex 0 1 auto
-  display flex
-  flex-direction row
-  flex-wrap wrap
-  margin-left: -($grid-settings.gutter / 2)
-  margin-right: -($grid-settings.gutter / 2)
-
-[class*="col-"]
-  flex 0 0 auto
-  padding-left: ($grid-settings.gutter / 2)
-  padding-right: ($grid-settings.gutter / 2)
-
 // Generate grid system
-for $breakpoint, $breakpoint-width in $grid-settings.breakpoints
-  generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $grid-settings.columns)
+generate-grid-system($grid-settings)

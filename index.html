@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+  <title>Flexy, Your friendly flexbox grid system</title>
+  <link rel="stylesheet" href="/dist/flexy.css">
+  <link rel="stylesheet" href="assets/css/showcase.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h1>Flexy</h1>
+          <p>Your friendly flexbox grid system</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <a href="https://github.com/nguyenj/flexy/archive/master.zip">Download now</a>
+          <a href="https://github.com/nguyenj/flexy">View it on Github</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Responsive</h2>
+        <p>Media query defaults to <code class="language-css">xs</code>, <code class="language-css">sm</code>, <code class="language-css">md</code>, <code class="language-css">lg</code>, <code class="language-css">xlg</code>, similar to Bootstrap's media query breakpoints. However, these breakpoints are customiziable with the <code class="language-css">$grid-settings</code> variable in Stylus.</p>
+        <p>The columns are percentage based widths which allows for fluid resizing in between each media query breakpoints.</p>
+
+        <pre><code class="language-html">&lt;div class="row"&gt;
+  &lt;div class="col-xs-12 col-md-6 col-lg-3"&gt;This is responsive.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-10 col-sm-11"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-8 col-sm-10"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-6 col-sm-9"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-4 col-sm-8"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-1"><div class="sc--box"></div></div>
+      <div class="col-xs-2 col-sm-7"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-1"><div class="sc--box"></div></div>
+      <div class="col-xs-1"><div class="sc--box"></div></div>
+      <div class="col-xs-1"><div class="sc--box"></div></div>
+      <div class="col-xs-1"><div class="sc--box"></div></div>
+      <div class="col-xs-1"><div class="sc--box"></div></div>
+      <div class="col-xs-1"><div class="sc--box"></div></div>
+      <div class="col-xs-6"><div class="sc--box"></div></div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Column offsets</h2>
+        <p>This moves columns to the right.</p>
+
+        <pre><code class="language-html">&lt;div class="row"&gt;
+  &lt;div class="col-xs-12 col-md-8 col-md-offset-4"&gt;Offsets can be responsive.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-11 col-xs-offset-1"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-2"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-9 col-xs-offset-3"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-4"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-7 col-xs-offset-5"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-6"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5 col-xs-offset-7"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-8"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-10"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-1 col-xs-offset-11"><div class="sc--box"></div></div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Automatic columns</h2>
+        <p>Without specify the number of columns to span, just add columns and it will automatically space columns evenly.</p>
+        <pre><code class="language-html">&lt;div class="row"&gt;
+  &lt;div class="col-auto"&gt;Now sure how many columns you'll need.&lt;/div&gt;
+  &lt;div class="col-auto"&gt;Add another and they'll be evenly distributed.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto"><div class="sc--box"></div></div>
+      <div class="col-auto"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto"><div class="sc--box"></div></div>
+      <div class="col-auto"><div class="sc--box"></div></div>
+      <div class="col-auto"><div class="sc--box"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto"><div class="sc--box"></div></div>
+      <div class="col-auto"><div class="sc--box"></div></div>
+      <div class="col-auto"><div class="sc--box"></div></div>
+      <div class="col-auto"><div class="sc--box"></div></div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Column distribution</h2>
+      </div>
+    </div>
+
+    <h3>Around</h3>
+    <pre><code class="language-html">&lt;div class="row around-xs"&gt;
+  &lt;div class="col-xs-4"&gt;Put spaces around each&lt;/div&gt;
+  &lt;div class="col-xs-4"&gt;column&lt;/div&gt;
+  &lt;div class="col-xs-4"&gt;evenly and responsively.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row around-xs">
+            <div class="col-xs-2"><div class="sc--box"></div></div>
+            <div class="col-xs-2"><div class="sc--box"></div></div>
+            <div class="col-xs-2"><div class="sc--box"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <h3>Between</h3>
+    <pre><code class="language-html">&lt;div class="row between-xs"&gt;
+  &lt;div class="col-xs-4"&gt;Put spaces between each&lt;/div&gt;
+  &lt;div class="col-xs-4"&gt;column&lt;/div&gt;
+  &lt;div class="col-xs-4"&gt;evenly, and responsively.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row between-xs">
+            <div class="col-xs-2"><div class="sc--box"></div></div>
+            <div class="col-xs-2"><div class="sc--box"></div></div>
+            <div class="col-xs-2"><div class="sc--box"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Gridception</h2>
+        <p>Nesting grids inside of grids.</p>
+
+        <pre><code class="language-html">&lt;div class="row"&gt;
+  &lt;div class="col-xs-12 col-sm-4"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+      &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col-xs-12 col-sm-8"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-xs-8"&gt;
+          &lt;div class="row"&gt;
+            &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+            &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="sc--container sc--box">
+          <div class="row">
+            <div class="col-xs-6"><div class="sc--container sc--box"></div></div>
+            <div class="col-xs-6"><div class="sc--container sc--box"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-8">
+        <div class="sc--container sc--box">
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="sc--container sc--box">
+                <div class="row">
+                  <div class="col-xs-6"><div class="sc--box"></div></div>
+                  <div class="col-xs-6"><div class="sc--box"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-4"><div class="sc--container sc--box"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Vertical alignments</h2>
+      </div>
+    </div>
+
+    <h3>Top</h3>
+    <pre><code class="language-html">&lt;div class="row top-xs"&gt;
+  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row top-xs">
+            <div class="col-xs-6"><div class="sc--box"></div></div>
+            <div class="col-xs-6">
+              <div class="sc--box" style="min-height:6em;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <h3>Middle</h3>
+    <pre><code class="language-html">&lt;div class="row middle-xs"&gt;
+  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row middle-xs">
+            <div class="col-xs-6"><div class="sc--box"></div></div>
+            <div class="col-xs-6">
+              <div class="sc--box" style="min-height:6em;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <h3>Bottom</h3>
+    <pre><code class="language-html">&lt;div class="row bottom-xs"&gt;
+  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row bottom-xs">
+            <div class="col-xs-6"><div class="sc--box"></div></div>
+            <div class="col-xs-6">
+              <div class="sc--box" style="min-height:6em;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Horizontal alignments</h2>
+      </div>
+    </div>
+
+    <h3>Start</h3>
+    <pre><code class="language-html">&lt;div class="row start-xs"&gt;
+  &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row start-xs">
+            <div class="col-xs-4"><div class="sc--box"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <h3>Center</h3>
+    <pre><code class="language-html">&lt;div class="row center-xs"&gt;
+  &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row center-xs">
+            <div class="col-xs-4"><div class="sc--box"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <h3>End</h3>
+    <pre><code class="language-html">&lt;div class="row end-xs"&gt;
+  &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row end-xs">
+            <div class="col-xs-4"><div class="sc--box"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Column (re)order</h2>
+      </div>
+    </div>
+
+    <h3>First</h3>
+    <pre><code class="language-html">&lt;div class="row"&gt;
+  &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;2&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
+  &lt;div class="col-xs-2 first-xs"&gt;5&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row">
+            <div class="text-center col-xs-2"><div class="sc--box"><p>1</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>2</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>3</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>4</p></div></div>
+            <div class="text-center col-xs-2 first-xs">
+              <div class="sc--box sc--box-highlight"><p>5</p></div>
+            </div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>6</p></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <h3>Last</h3>
+    <pre><code class="language-html">&lt;div class="row"&gt;
+  &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
+  &lt;div class="col-xs-2 last-xs"&gt;2&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;5&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row">
+            <div class="text-center col-xs-2"><div class="sc--box"><p>1</p></div></div>
+            <div class="text-center col-xs-2 last-xs">
+              <div class="sc--box sc--box-highlight"><p>2</p></div>
+            </div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>3</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>4</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>5</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>6</p></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Reverse order</h2>
+        <pre><code class="language-html">&lt;div class="row reverse"&gt;
+  &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;2&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;5&lt;/div&gt;
+  &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="sc--container sc--box">
+
+          <div class="row reverse">
+            <div class="text-center col-xs-2"><div class="sc--box"><p>1</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>2</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>3</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>4</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>5</p></div></div>
+            <div class="text-center col-xs-2"><div class="sc--box"><p>6</p></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "flexy.grid",
+  "version": "0.0.1",
+  "description": "A modern and friendly flexbox grid system.",
+  "main": "dist/flexy.min.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:min && npm run build:unmin",
+    "build:min": "stylus --compress --sourcemap _stylus/flexy.styl -o dist/flexy.min.css",
+    "build:unmin": "stylus --sourcemap _stylus/flexy.styl -o dist/flexy.css",
+    "build:watch": "stylus --sourcemap --watch _stylus/flexy.styl -o dist/flexy.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenj/flexy.git"
+  },
+  "keywords": [
+    "flexbox",
+    "css",
+    "grid",
+    "front-end"
+  ],
+  "author": "John Nguyen <hello@jnguyen.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nguyenj/flexy/issues"
+  },
+  "homepage": "https://github.com/nguyenj/flexy",
+  "devDependencies": {
+    "stylus": "^0.54.5"
+  }
+}
