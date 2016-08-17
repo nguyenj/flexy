@@ -5,8 +5,9 @@ generate-columns($breakpoint, $columns)
       flex-basis percentage($column / $columns)
       max-width percentage($column / $columns)
 
-    .col-{$breakpoint}-offset-{$column}
-      margin-left percentage($column / $columns)
+    if $grid-settings.offsets
+      .col-{$breakpoint}-offset-{$column}
+        margin-left percentage($column / $columns)
 
   .start-{$breakpoint}
     justify-content flex-start
@@ -71,7 +72,7 @@ generate-grid-system($settings)
     &.reverse
       flex-direction row-reverse
 
-  [class*="col-"]
+  [class*='col-']
     if $settings.animation
       transition-property flex-basis, max-width
       transition-duration 0.2s
@@ -94,11 +95,12 @@ $grid-settings ?= {
   columns: 12,
   breakpoints: {
     xs: 0,
-    sm: 480px,
-    md: 768px,
-    lg: 992px,
-    xlg: 1200px
-  }
+    sm: 30em,
+    md: 45em,
+    lg: 60em,
+    xlg: 75em
+  },
+  offsets: true
 }
 
 
