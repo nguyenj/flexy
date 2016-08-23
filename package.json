@@ -2,7 +2,7 @@
   "name": "flexy.grid",
   "version": "0.1.0",
   "description": "A modern and friendly flexbox grid system.",
-  "main": "dist/flexy.min.css",
+  "main": "_stylus/flexy.styl",
   "scripts": {
     "build": "npm run build:min && npm run build:unmin",
     "build:min": "stylus --compress --sourcemap --use autoprefixer-stylus _stylus/flexy.styl -o dist/flexy.min.css",

@@ -5,7 +5,7 @@ generate-columns($breakpoint, $columns)
       flex-basis percentage($column / $columns)
       max-width percentage($column / $columns)
 
-    if $grid-settings.offsets
+    if $grid-settings--offsets
       .col-{$breakpoint}-offset-{$column}
         margin-left percentage($column / $columns)
 
@@ -48,9 +48,9 @@ generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $columns)
         max-width $breakpoint-width
       generate-columns($breakpoint, $columns)
 
-generate-grid-system($settings)
+generate-grid-system()
   .container
-    if $settings.animation
+    if $grid-settings--animation
       transition-property max-width
       transition-duration 0.2s
     box-sizing border-box
@@ -58,51 +58,49 @@ generate-grid-system($settings)
     width 100%
     margin-left auto
     margin-right auto
-    padding-left: $settings.gutter
-    padding-right: $settings.gutter
+    padding-left: $grid-settings--gutter
+    padding-right: $grid-settings--gutter
 
   .row
     flex 0 1 auto
     display flex
     flex-wrap wrap
     flex-direction row
-    margin-left: -($settings.gutter / 2)
-    margin-right: -($settings.gutter / 2)
+    margin-left: -($grid-settings--gutter / 2)
+    margin-right: -($grid-settings--gutter / 2)
 
     &.reverse
       flex-direction row-reverse
 
   [class*='col-']
-    if $settings.animation
+    if $grid-settings--animation
       transition-property flex-basis, max-width
       transition-duration 0.2s
     box-sizing border-box
     flex 0 0 auto
-    padding-left: ($settings.gutter / 2)
-    padding-right: ($settings.gutter / 2)
+    padding-left: ($grid-settings--gutter / 2)
+    padding-right: ($grid-settings--gutter / 2)
 
   .col-auto
     flex 1 0 0
     max-width 100%
 
-  for $breakpoint, $breakpoint-width in $settings.breakpoints
-    generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $settings.columns)
+  for $breakpoint, $breakpoint-width in $grid-settings--breakpoints
+    generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $grid-settings--columns)
 
 // Grid settings
-$grid-settings ?= {
-  animation: true,
-  gutter: 1em,
-  columns: 12,
-  breakpoints: {
-    xs: 0,
-    sm: 30em,
-    md: 45em,
-    lg: 60em,
-    xlg: 75em
-  },
-  offsets: true
+$grid-settings--animation ?= true
+$grid-settings--gutter ?= 1em
+$grid-settings--columns ?= 12
+$grid-settings--breakpoints ?= {
+  xs: 0,
+  sm: 30em,
+  md: 45em,
+  lg: 60em,
+  xlg: 75em
 }
+$grid-settings--offsets ?= true
 
 
 // Generate grid system
-generate-grid-system($grid-settings)
+generate-grid-system()
