@@ -1,0 +1,67 @@
+@import '../settings';
+@import 'generate-columns-with-breakpoints';
+
+@mixin generate-grid-system() {
+  $classes: $grid-settings--classes;
+  $last-item: nth($grid-settings--breakpoints, length($grid-settings--breakpoints));
+  $max-width: nth($last-item, length($last-item));
+
+  .#{map-get($classes, 'container')}-fluid {
+    width: 100%;
+  }
+
+  .#{map-get($classes, 'container')} {
+    @if $grid-settings--animation {
+      transition-property: max-width;
+      transition-duration: 0.2s;
+    }
+    box-sizing: border-box;
+    max-width: $max-width;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $grid-settings--gutter;
+    padding-right: $grid-settings--gutter;
+
+    .#{map-get($classes, 'row')} {
+      margin-left: -($grid-settings--gutter);
+      margin-right: -($grid-settings--gutter);
+    }
+  }
+
+  .#{map-get($classes, 'row')} {
+    flex: 0 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .#{map-get($classes, 'row')} {
+      margin-left: -($grid-settings--gutter / 2);
+      margin-right: -($grid-settings--gutter / 2);
+    }
+  }
+
+  [class*='#{map-get($classes, 'column')}-'] {
+    @if $grid-settings--animation {
+      transition-property: flex-basis, max-width;
+      transition-duration: 0.2s;
+    }
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-left: ($grid-settings--gutter / 2);
+    padding-right: ($grid-settings--gutter / 2);
+  }
+
+  .#{map-get($classes, 'column')}-auto {
+    flex: 1 0 auto;
+    max-width: 100%;
+  }
+
+  @each $breakpoint, $breakpoint-width in $grid-settings--breakpoints {
+    @include generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $grid-settings--columns);
+  }
+}

@@ -1,0 +1,17 @@
+$grid-settings--animation: true !default;
+$grid-settings--gutter: 1em !default;
+$grid-settings--columns: 12 !default;
+$grid-settings--offsets: true !default;
+$grid-settings--breakpoints: (
+  xs: 0,
+  sm: 30em,
+  md: 45em,
+  lg: 60em
+) !default;
+$grid-settings--classes: (
+  container: 'container',
+  row: 'row',
+  column: 'col',
+  offset: 'offset'
+) !default;
+

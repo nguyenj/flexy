@@ -1,0 +1,18 @@
+@import '../settings';
+@import 'generate-helpers';
+@import 'generate-columns';
+
+@mixin generate-columns-with-breakpoints($breakpoint, $breakpoint-width, $columns) {
+  $classes: $grid-settings--classes;
+
+  @if $breakpoint-width == 0 {
+    @include generate-helpers($breakpoint);
+    @include generate-columns($breakpoint, $columns);
+
+  } @else {
+    @media screen and (min-width: $breakpoint-width) {
+      @include generate-helpers($breakpoint);
+      @include generate-columns($breakpoint, $columns);
+    }
+  }
+}

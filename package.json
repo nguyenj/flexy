@@ -2,12 +2,11 @@
   "name": "flexy.grid",
   "version": "0.2.0",
   "description": "A modern and friendly flexbox grid system.",
-  "main": "_stylus/flexy.styl",
+  "main": "_sass/flexy.scss",
   "scripts": {
-    "build": "npm run build:min && npm run build:unmin",
-    "build:min": "stylus --compress --sourcemap --use autoprefixer-stylus _stylus/flexy.styl -o dist/flexy.min.css",
-    "build:unmin": "stylus --sourcemap --use autoprefixer-stylus _stylus/flexy.styl -o dist/flexy.css",
-    "build:watch": "stylus --sourcemap --use autoprefixer-stylus --watch _stylus/flexy.styl -o dist/flexy.css"
+    "build": "rm -rf dist/* && npm run build:min && npm run prefix",
+    "build:min": "rm -rf dist/* && node-sass --output-style=compressed --source-map=dist _sass --output dist",
+    "prefix": "postcss --use autoprefixer --map dist/*.css.map --dir dist dist/*.css"
   },
   "repository": {
     "type": "git",
@@ -26,7 +25,9 @@
   },
   "homepage": "https://github.com/nguyenj/flexy",
   "devDependencies": {
-    "autoprefixer-stylus": "^0.9.4",
-    "stylus": "^0.54.5"
+    "autoprefixer": "^6.5.4",
+    "browserslist": "^1.4.0",
+    "node-sass": "^4.0.0",
+    "postcss-cli": "^2.6.0"
   }
 }

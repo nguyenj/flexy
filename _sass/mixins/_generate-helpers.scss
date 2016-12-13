@@ -1,0 +1,44 @@
+@import '../settings';
+
+@mixin generate-helpers($breakpoint) {
+  .start-#{$breakpoint} {
+    justify-content: flex-start;
+  }
+
+  .center-#{$breakpoint} {
+    justify-content: center;
+  }
+
+  .end-#{$breakpoint} {
+    justify-content: flex-end;
+  }
+
+  .top-#{$breakpoint} {
+    align-items: flex-start;
+  }
+
+  .middle-#{$breakpoint} {
+    align-items: center;
+  }
+
+  .bottom-#{$breakpoint} {
+    align-items: flex-end;
+  }
+
+  .around-#{$breakpoint} {
+    justify-content: space-around;
+  }
+
+  .between-#{$breakpoint} {
+    justify-content: space-between;
+  }
+
+  .first-#{$breakpoint} {
+    order: -1;
+  }
+
+  .last-#{$breakpoint} {
+    order: 1;
+  }
+}
+

@@ -1,0 +1,19 @@
+@import '../settings';
+
+@mixin generate-columns($breakpoint, $columns) {
+  $classes: $grid-settings--classes;
+
+  @for $column from 1 through $columns {
+    .#{map-get($classes, 'column')}-#{$breakpoint}-#{$column} {
+      flex-basis: percentage($column / $columns);
+      max-width: percentage($column / $columns);
+    }
+
+    @if $grid-settings--offsets {
+      .#{map-get($classes, 'column')}-#{map-get($classes, 'offset')}-#{$breakpoint}-#{$column} {
+        margin-left: percentage($column / $columns);
+      }
+    }
+  }
+}
+
