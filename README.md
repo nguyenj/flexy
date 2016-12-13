@@ -1,6 +1,9 @@
 # Get started
 
-You can [npm install](#npm-install) to compile it with your stylesheets.
+1. `npm install --save-dev flexy.grid`
+2. `@import 'flexy';`
+3. Head over to the [documentation](https://nguyenj.github.io/flexy/)
+4. File [bugs and or issues](https://github.com/nguyenj/flexy/issues)
 
 # Customizing
 
