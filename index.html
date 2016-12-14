@@ -37,8 +37,10 @@
         <p>Media query defaults to <code class="language-css">xs</code>, <code class="language-css">sm</code>, <code class="language-css">md</code>, <code class="language-css">lg</code>, <code class="language-css">xlg</code>, similar to Bootstrap's media query breakpoints. However, these breakpoints are customiziable with the <code class="language-css">$grid-settings</code> variable in Stylus.</p>
         <p>The columns are percentage based widths which allows for fluid resizing in between each media query breakpoints.</p>
 
-        <pre><code class="language-html">&lt;div class="row"&gt;
-  &lt;div class="col-xs-12 col-md-6 col-lg-3"&gt;This is responsive.&lt;/div&gt;
+        <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-xs-12 col-md-6 col-lg-3"&gt;This is responsive.&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
     </div>
@@ -100,8 +102,10 @@
         <h2>Column offsets</h2>
         <p>This moves columns to the right.</p>
 
-        <pre><code class="language-html">&lt;div class="row"&gt;
-  &lt;div class="col-xs-12 col-md-8 col-md-offset-4"&gt;Offsets can be responsive.&lt;/div&gt;
+        <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-xs-12 col-md-8 col-md-offset-4"&gt;Offsets can be responsive.&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
     </div>
@@ -157,9 +161,11 @@
       <div class="col-xs-12">
         <h2>Automatic columns</h2>
         <p>Without specify the number of columns to span, just add columns and it will automatically space columns evenly.</p>
-        <pre><code class="language-html">&lt;div class="row"&gt;
-  &lt;div class="col-auto"&gt;Now sure how many columns you'll need.&lt;/div&gt;
-  &lt;div class="col-auto"&gt;Add another and they'll be evenly distributed.&lt;/div&gt;
+        <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-auto"&gt;Now sure how many columns you'll need.&lt;/div&gt;
+    &lt;div class="col-auto"&gt;Add another and they'll be evenly distributed.&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
     </div>
@@ -192,10 +198,12 @@
     </div>
 
     <h3>Around</h3>
-    <pre><code class="language-html">&lt;div class="row around-xs"&gt;
-  &lt;div class="col-xs-4"&gt;Put spaces around each&lt;/div&gt;
-  &lt;div class="col-xs-4"&gt;column&lt;/div&gt;
-  &lt;div class="col-xs-4"&gt;evenly and responsively.&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row around-xs"&gt;
+    &lt;div class="col-xs-4"&gt;Put spaces around each&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;column&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;evenly and responsively.&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -212,10 +220,12 @@
     </div>
 
     <h3>Between</h3>
-    <pre><code class="language-html">&lt;div class="row between-xs"&gt;
-  &lt;div class="col-xs-4"&gt;Put spaces between each&lt;/div&gt;
-  &lt;div class="col-xs-4"&gt;column&lt;/div&gt;
-  &lt;div class="col-xs-4"&gt;evenly, and responsively.&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row between-xs"&gt;
+    &lt;div class="col-xs-4"&gt;Put spaces between each&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;column&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;evenly, and responsively.&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -239,23 +249,25 @@
         <h2>Gridception</h2>
         <p>Nesting grids inside of grids.</p>
 
-        <pre><code class="language-html">&lt;div class="row"&gt;
-  &lt;div class="col-xs-12 col-sm-4"&gt;
-    &lt;div class="row"&gt;
-      &lt;div class="col-xs-6"&gt;&lt;/div&gt;
-      &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+        <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-xs-12 col-sm-4"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="col-xs-12 col-sm-8"&gt;
-    &lt;div class="row"&gt;
-      &lt;div class="col-xs-8"&gt;
-          &lt;div class="row"&gt;
-            &lt;div class="col-xs-6"&gt;&lt;/div&gt;
-            &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    &lt;div class="col-xs-12 col-sm-8"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-xs-8"&gt;
+            &lt;div class="row"&gt;
+              &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+              &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
+        &lt;div class="col-xs-4"&gt;&lt;/div&gt;
       &lt;/div&gt;
-      &lt;div class="col-xs-4"&gt;&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -299,9 +311,11 @@
     </div>
 
     <h3>Top</h3>
-    <pre><code class="language-html">&lt;div class="row top-xs"&gt;
-  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
-  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row top-xs"&gt;
+    &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -319,9 +333,11 @@
     </div>
 
     <h3>Middle</h3>
-    <pre><code class="language-html">&lt;div class="row middle-xs"&gt;
-  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
-  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row middle-xs"&gt;
+    &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -339,9 +355,11 @@
     </div>
 
     <h3>Bottom</h3>
-    <pre><code class="language-html">&lt;div class="row bottom-xs"&gt;
-  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
-  &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row bottom-xs"&gt;
+    &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
     <div class="row">
@@ -369,8 +387,10 @@
     </div>
 
     <h3>Start</h3>
-    <pre><code class="language-html">&lt;div class="row start-xs"&gt;
-  &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row start-xs"&gt;
+    &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
     <div class="row">
@@ -386,8 +406,10 @@
     </div>
 
     <h3>Center</h3>
-    <pre><code class="language-html">&lt;div class="row center-xs"&gt;
-  &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row center-xs"&gt;
+    &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -402,8 +424,10 @@
     </div>
 
     <h3>End</h3>
-    <pre><code class="language-html">&lt;div class="row end-xs"&gt;
-  &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row end-xs"&gt;
+    &lt;div class="col-xs-4"&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -427,13 +451,15 @@
     </div>
 
     <h3>First</h3>
-    <pre><code class="language-html">&lt;div class="row"&gt;
-  &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;2&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
-  &lt;div class="col-xs-2 first-xs"&gt;5&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-2 first-xs"&gt;5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -455,13 +481,15 @@
     </div>
 
     <h3>Last</h3>
-    <pre><code class="language-html">&lt;div class="row"&gt;
-  &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
-  &lt;div class="col-xs-2 last-xs"&gt;2&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;5&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-2 last-xs"&gt;2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     <div class="row">
       <div class="col-xs-12">
@@ -488,13 +516,15 @@
     <div class="row">
       <div class="col-xs-12">
         <h2>Reverse order</h2>
-        <pre><code class="language-html">&lt;div class="row reverse"&gt;
-  &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;2&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;5&lt;/div&gt;
-  &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+    <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="row reverse"&gt;
+    &lt;div class="col-xs-2"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;6&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
     </div>

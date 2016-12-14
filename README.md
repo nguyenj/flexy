@@ -9,7 +9,7 @@
 
 ## Breakpoints
 
-By default, the grid system is using a similar breakpoint label as Bootstrap: xs, sm, md, lg, xlg. However you can change these classes or limit the number of breakpoints to your needs. Instead of 5 different breakpoints, you can set 2 breakpoint with different labels. `$grid-settings` is a hash that you can override with your particular settings.
+By default, the grid system is using a similar breakpoint label as Bootstrap: xs, sm, md, lg, xlg. However you can change these classes or limit the number of breakpoints to your needs. Instead of 5 different breakpoints, you can set 2 breakpoint with different labels. `$grid-settings--breakpoints` is a hash that you can override with your particular settings.
 
 ```
 $grid-settings--animation: true !default;
@@ -35,23 +35,31 @@ You can change the breakpoints like so:
 ```
 $grid-settings--breakpoints: (
   mobile: 0,
-  table: 48em
+  tablet: 48em
 }
+```
+
+and your classes will be like so:
+
+```
+...
+.col-tablet-1
+...
 ```
 
 ## Columns
 
-The default grid system is generated with 12 columns; however, you're able to change the number of columns by changing the `$grid-settings.columns` to your needs:
+The default grid system is generated with 12 columns; however, you're able to change the number of columns by changing the `$grid-settings--columns` to your needs:
 
 ```
-$grid-settings--columns: 12;
+$grid-settings--columns: 10;
 ```
 
 ## Column gutter
 
 The default column gutter size is `1em`. The unit of the gutter does not have to be in `em`s, it could be in `px`s if that strikes your fancy.
 
-You can change the width of the column gutter by changing `$grid-settings.gutter`:
+You can change the width of the column gutter by changing `$grid-settings--gutter`:
 
 ```
 $grid-settings--gutter: 1em;
